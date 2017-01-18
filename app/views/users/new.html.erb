@@ -1,0 +1,26 @@
+<div class="content-wrapper">
+  <h1 class="page-header">Register</h1>
+  <%= form_for @user do |f| %>
+    <div class="form">
+      <div class="form-field">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="form-field">
+        <%= f.label :email %><br>
+        <%= f.email_field :email %>
+      </div>
+      <div class="form-field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password %>
+      </div>
+      <div class="form-field">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="submit">
+        <%= f.submit "register", class: "form-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
