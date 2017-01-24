@@ -4,11 +4,21 @@
     <title>HeadacheTracker</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="header-wrapper">
+      <h1 id="site-header">Headache Tracker</h1>
+      <ul id="nav-links">
+        <% if !logged_in? %>
+          <li class="nav-link"><%= link_to "login", sessions_new_path %></li>
+          <li class="nav-link"><%= link_to "register", users_new_path %></li>
+        <% else %>
+          <li class="nav-link"><%= link_to "Welcome "+ current_user.name, current_user %></li>
+          <li class="nav-link"><%= link_to "logout", "/sessions", method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
     
     <%= yield %>
   </body>

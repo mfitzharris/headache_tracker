@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
-      sesssion[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to '/'
     else
       @errors = ["Username and/or password do not match our records"]
