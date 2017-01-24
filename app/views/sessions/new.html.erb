@@ -1,5 +1,17 @@
 <div id="content-wrapper">
   <h1 class="page-header">Login</h1>
+
+  <% if @errors %>
+  <div class="errors">
+    <h3 id="error-header">Error(s):</h3>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
   <%= form_tag sessions_path do %>
     <div class="form">
       <div class="form-field">
