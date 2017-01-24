@@ -1,0 +1,30 @@
+<div id="content-wrapper">
+  <h1 class="page-header">Login</h1>
+
+  <% if @errors %>
+  <div class="errors">
+    <h3 id="error-header">Error(s):</h3>
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <%= form_tag sessions_path do %>
+    <div class="form">
+      <div class="form-field">
+        <%= label_tag :email %><br>
+        <%= email_field_tag :email %>
+      </div>
+      <div class="form-field">
+        <%= label_tag :password %><br>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="submit">
+        <%= submit_tag "login", class: "form-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
