@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   get '/sessions/new' => "sessions#new"
   post '/sessions' => "sessions#create"
   delete '/sessions' => "sessions#destroy"
+
+  get '/headaches' => "headaches#index"
+  get '/headaches/new' => "headaches#new"
+  post '/headaches' => "headaches#create"
+
 end
