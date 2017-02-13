@@ -1,0 +1,46 @@
+<div class="content-wrapper">
+  <h1 class="page-header">Record a New Headache</h1>
+
+  <%= form_for @headache do |headache| %>
+    <div class="form">
+
+      <div class="form-field">
+        <%= headache.label :onset %><br>
+        <%= headache.datetime_local_field :onset %>
+      </div>
+      <br>
+
+      <div class="form-field">
+        <%= headache.label :ending %><br>
+        <%= headache.datetime_local_field :ending %>
+      </div>
+      <br>
+
+      <div class="form-field">
+        <%= headache.label :severity %><br>
+        1<%= headache.radio_button :severity, "1"  %>
+        2<%= headache.radio_button :severity, "2" %>  
+        3<%= headache.radio_button :severity, "3" %>  
+        4<%= headache.radio_button :severity, "4" %>  
+        5<%= headache.radio_button :severity, "5" %>  
+        6<%= headache.radio_button :severity, "6" %>  
+        7<%= headache.radio_button :severity, "7" %>  
+        8<%= headache.radio_button :severity, "8" %>  
+        9<%= headache.radio_button :severity, "9" %>  
+        10<%= headache.radio_button :severity, "10" %>
+      </div>
+      <br>
+
+      <div class="form-field">
+        <%= headache.label :notes %><br>
+        <%= headache.text_area :notes, cols: 50, rows: 5 %>
+      </div>
+      <br>
+
+      <div class="submit">
+        <%= headache.submit "record headache", class: "form-button" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

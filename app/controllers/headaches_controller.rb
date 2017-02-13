@@ -4,6 +4,7 @@ class HeadachesController < ApplicationController
   end
 
   def new
+    @headache = Headache.new
   end
 
   def create
