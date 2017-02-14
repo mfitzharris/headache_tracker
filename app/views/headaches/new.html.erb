@@ -18,22 +18,23 @@
 
       <div class="form-field">
         <%= headache.label :severity %><br>
-        1<%= headache.radio_button :severity, "1"  %>
-        2<%= headache.radio_button :severity, "2" %>  
-        3<%= headache.radio_button :severity, "3" %>  
-        4<%= headache.radio_button :severity, "4" %>  
-        5<%= headache.radio_button :severity, "5" %>  
-        6<%= headache.radio_button :severity, "6" %>  
-        7<%= headache.radio_button :severity, "7" %>  
-        8<%= headache.radio_button :severity, "8" %>  
-        9<%= headache.radio_button :severity, "9" %>  
-        10<%= headache.radio_button :severity, "10" %>
+        <%= 10.times do |i| %>
+          <%= i %> <%= headache.radio_button :severity, "#{i}" %>
+        <% end %>
+      </div>
+      <br>
+
+      <div class="form-section-field">
+        <%= headache.fields_for :headache_factors do %>
+          <%= render partial: 'headache_factors/new' %>
+        <% end %>
       </div>
       <br>
 
       <div class="form-field">
-        <%= headache.fields_for :headache_factors do %>
-          <%= render partial: 'headache_factors/new' %>
+        taken medicines
+        <%= headache.fields_for :taken_medicines do %>
+          <%= render partial: 'taken_medicines/new' %>
         <% end %>
       </div>
       <br>
@@ -43,6 +44,7 @@
         <%= headache.text_area :notes, cols: 50, rows: 5 %>
       </div>
       <br>
+
 
       <div class="submit">
         <%= headache.submit "record headache", class: "form-button" %>
