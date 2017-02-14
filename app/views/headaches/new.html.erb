@@ -31,6 +31,13 @@
       </div>
       <br>
 
+      <div class="form">
+        <%= headache.fields_for :headache_factors do %>
+          <%= render partial: 'headache_factors/new' %>
+        <% end %>
+      </div>
+      <br>
+
       <div class="form-field">
         <%= headache.label :notes %><br>
         <%= headache.text_area :notes, cols: 50, rows: 5 %>

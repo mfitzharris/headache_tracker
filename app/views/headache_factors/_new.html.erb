@@ -1,0 +1,2 @@
+<%= label_tag "Select all that apply:" %><br>
+<%= select_tag :factor, options_from_collection_for_select(Factor.all, :id, :name), multiple: true %>
