@@ -1,0 +1,27 @@
+<div class="form-field">
+  <%= label_tag :name %><br>
+  <%= text_field_tag :name %>
+</div>
+<br>
+
+<div class="form-field">
+  <%= label_tag :dose_in_mg %><br>
+  <%= text_field_tag :dose_in_mg %>
+</div>
+<br>
+
+<div class="form-field">
+  <%= label_tag :headache_relief %> (0 being none, 10 being completely cured) <br>
+  <% 11.times do |i|%>
+    <%= i %><%= radio_button_tag :headache_relief, "#{i}" %>
+  <% end %>
+  
+
+</div>
+<br>
+
+<div class="form-field">
+  <%= label_tag :taken %><br>
+  <%= datetime_local_field_tag :taken %>
+</div>
+<br>
